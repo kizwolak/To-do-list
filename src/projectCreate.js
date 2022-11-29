@@ -6,9 +6,8 @@ export default function createProject(title) {
         arrayOfToDos: [],
         addNew (title, type, date) {
             let toDo = toDoObject(title, type, date);
-            let newArray = [];
-            newArray.push(toDo);
-            this.arrayOfToDos = newArray;
+            this.arrayOfToDos.push(toDo);
+            console.log(`This is ${this.arrayOfToDos}`);
             return this;
         }
     }

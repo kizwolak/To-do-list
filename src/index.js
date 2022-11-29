@@ -16,6 +16,7 @@ console.log(time2);
 
 const testProject = createProject("test");
 
-testProject.addNew("test1", "desc", Date(2022, 5, 28));
+testProject.addNew("test1", "desc", new Date(2022, 5, 28));
+testProject.addNew("test2", "desc", new Date(2022, 5, 28));
 
 console.log(testProject);
