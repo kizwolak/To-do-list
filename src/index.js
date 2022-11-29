@@ -1,15 +1,21 @@
 const datefns = require("date-fns");
 import toDoObject from "./toDoObject.js";
+import createProject from "./projectCreate.js";
 
 
 const today = new Date();
 
 const nextDay = datefns.addDays(today, 1);
 
+const time = new Date(2022, 5, 28, 12, 13, 17);
+const time2 = new Date(2022,5,29,1,3,4);
 
-console.log(today);
-console.log(nextDay);
 
-let test = toDoObject("Doopa", "desc");
+console.log(time);
+console.log(time2);
 
-console.log(test);
+const testProject = createProject("test");
+
+testProject.addNew("test1", "desc", Date(2022, 5, 28));
+
+console.log(testProject);

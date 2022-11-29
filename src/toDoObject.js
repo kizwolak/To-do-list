@@ -1,9 +1,9 @@
-import toDoObjectDesc from "./toDoObjectDesc.js";
-
-export default function toDoObject(title, type) {
+export default function toDoObject(title, type, date) {
     if (type === "desc") {
         return {
-            title: title,
+            title,
+            date,
+            desc: prompt("What is your description?"),
         };
     } else {
         return {

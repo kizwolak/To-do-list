@@ -6,8 +6,6 @@ module.exports = {
   mode: 'development',
   entry: {
     main: './src/index.js',
-    toDoObject: './src/toDoObject.js',
-    toDoObjectDesc: './src/toDoObjectDesc.js',
   },
   output: {
     filename: './dist/[name].main.js',
