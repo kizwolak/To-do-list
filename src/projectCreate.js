@@ -5,10 +5,13 @@ export default function createProject(title) {
         title,
         arrayOfToDos: [],
         addNew (title, type, date) {
-            let toDo = toDoObject(title, type, date);
+            let toDo = toDoObject(title, type, date, priority);
             this.arrayOfToDos.push(toDo);
             console.log(`This is ${this.arrayOfToDos}`);
             return this;
+        },
+        delete() {
+
         }
     }
 };
