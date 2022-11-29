@@ -11,13 +11,14 @@ export default function timeSorter(object) {
                 priority: element.priority,
             };
             dateArray.push(dateToDo);
-            console.log(dateArray);
+            console.log(dates);
         } else if (dates.includes(element.date)) {
+            let index = dates.findIndex(date => date.date === element.date);
             const dateToDo = {
                 date: element.date,
                 priority: element.priority,
             };
-            dateArray.push(dateToDo);
+            dateArray[index].push(dateToDo);
             console.log(dateArray);
         }
     });
