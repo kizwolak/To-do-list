@@ -1,29 +1,54 @@
 export default function timeSorter(object) {
 
-    const dates = ['',];
+    const dates = [];
 
     object.arrayOfToDos.forEach(element => {
-        dates.forEach(date => {
-            if ((!(date.name == element.date)) || dates.length == 0) {
-                let newArrayName = element.date;
-                console.log(newArrayName);
-                console.log(element.date);
-                class dateArray {
-                    constructor(name) {
-                        this.name = name;
-                        this.array = [];
-                    }
-                };
-                const newDate = new dateArray(newArrayName);
-                console.log(newDate.name); 
-                const dateToDo = {
-                    date: element.date,
-                    priority: element.priority,
-                };
-                newDate.array.push(dateToDo);
-                dates.push(newDate);
-                break;
-            }
+        if (!(dates.includes(element.date))) {
+            let newArrayName = element.date;
+            class dateArray {
+                constructor(name) {
+                    this.name = name;
+                    this.array = [];
+                }
+            };
+            const newDate = new dateArray(newArrayName);
+            const dateToDo = {
+                date: element.date,
+                priority: element.priority,
+            };
+            newDate.array.push(dateToDo);
+            dates.push(newDate);
+        }
+    });
+    console.log(dates);
+    return dates;
+}
+    // const dates = [''];
+
+    // object.arrayOfToDos.forEach(element => {
+    //     dates.forEach(date => {
+    //         if (!(date.name == element.date)) {
+    //             let newArrayName = element.date;
+    //             class dateArray {
+    //                 constructor(name) {
+    //                     this.name = name;
+    //                     this.array = [];
+    //                 }
+    //             };
+    //             const newDate = new dateArray(newArrayName);
+    //             const dateToDo = {
+    //                 date: element.date,
+    //                 priority: element.priority,
+    //             };
+    //             newDate.array.push(dateToDo);
+    //             dates.push(newDate);
+    //         }
+    //     })
+    // }) 
+    // console.log(dates);
+    // return dates;
+
+
             // } else if (element1.name === element.date){
             //     const dateArray = {
             //         constructor() {
@@ -40,13 +65,7 @@ export default function timeSorter(object) {
             //     };
             //     dates.element1.array.push(dateToDo);
             // }
-    }
-    )
-}
-    ) 
-console.log(dates);
-return dates;
-}
+
     //     if (!dates.includes(element.date)) {
     //         console.log(element.date);
     //         const dateArray = {
