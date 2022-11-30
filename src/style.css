@@ -7,10 +7,10 @@
 body {
     margin: 4em 10em;
     display: grid;
-    grid-template-areas: "projects main main main main"
-                         "projects main main main main"
-                         "projects main main main main"
-                         "projects main main main main";
+    grid-template-areas: "projects main main main main main main"
+                         "projects main main main main main main"
+                         "projects main main main main main main"
+                         "projects main main main main main main";
 }
 
 .projects {
@@ -20,9 +20,14 @@ body {
     gap: 2em;
 }
 
-.projects > * {
+.projectsTitle {
     display: flex;
-    flex-direction: column;
+    gap: 2em;
+    align-items: center;
+}
+
+.projectButtons {
+    display: flex;
     gap: 2em;
 }
 
