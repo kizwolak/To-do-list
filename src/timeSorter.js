@@ -3,21 +3,31 @@ export default function timeSorter(object) {
     const dates = [];
 
     object.arrayOfToDos.forEach(element => {
-        if (!(dates.includes(element.date))) {
-            let newArrayName = element.date;
+        if (!(dates.some(date => date.name == element.date))) {
+            console.log("if");
+            console.log("newArrayName" + element.date);
             class dateArray {
                 constructor(name) {
                     this.name = name;
                     this.array = [];
                 }
             };
-            const newDate = new dateArray(newArrayName);
+            const newDate = new dateArray(element.date);
             const dateToDo = {
                 date: element.date,
                 priority: element.priority,
             };
             newDate.array.push(dateToDo);
             dates.push(newDate);
+        } else if (dates.some(date => date.name == element.date)) {
+            console.log("else");
+            const dateToDo = {
+                date: element.date,
+                priority: element.priority,
+            };
+            let datesIndex = dates.findIndex(date => date.name == element.date);
+            console.log(datesIndex);
+            dates[datesIndex].array.push(dateToDo);
         }
     });
     console.log(dates);
