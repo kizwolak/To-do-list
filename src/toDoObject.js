@@ -3,7 +3,7 @@ export default function toDoObject(title, type, date, priority) {
         return {
             title,
             date,
-            desc: prompt("What is your description?"),
+            desc,
             priority,
         };
     } else {

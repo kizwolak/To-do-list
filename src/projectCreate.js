@@ -1,4 +1,5 @@
 import toDoObject from "./toDoObject.js";
+import generateProjects from "./generateProjects.js";
 
 export default function createProject(title) {
     return {
@@ -10,8 +11,7 @@ export default function createProject(title) {
             console.log(`This is ${this.arrayOfToDos}`);
             return this;
         },
-        delete() {
-
-        }
+        generateProjects,
+        
     }
 };
