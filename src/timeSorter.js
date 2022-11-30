@@ -1,9 +1,9 @@
 export default function timeSorter(object) {
 
-    const dates = [];
+    const dates = [{name: "Tue Jun 28 2022 00:00:00 GMT+0200 (Central European Summer Time)", array: []}];
 
     object.arrayOfToDos.forEach(element => {
-        if (!(dates.some(date => date.name == element.date))) {
+        if (!(dates.some(dateArray => dateArray.name == element.date))) {
             console.log("if");
             console.log("newArrayName" + element.date);
             class dateArray {
@@ -19,6 +19,7 @@ export default function timeSorter(object) {
             };
             newDate.array.push(dateToDo);
             dates.push(newDate);
+            console.log("Dates array: " + dates);
         } else if (dates.some(date => date.name == element.date)) {
             console.log("else");
             const dateToDo = {
@@ -26,7 +27,9 @@ export default function timeSorter(object) {
                 priority: element.priority,
             };
             let datesIndex = dates.findIndex(date => date.name == element.date);
-            console.log(datesIndex);
+            console.log("datesIndex =  " + datesIndex);
+            let datesReference = dates[datesIndex];
+            console.log(datesReference);
             dates[datesIndex].array.push(dateToDo);
         }
     });
