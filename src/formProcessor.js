@@ -1,3 +1,4 @@
+import addNew from "./addNew";
 import createProject from "./createProject";
 import generateProjects from "./generateProjects";
 
@@ -13,5 +14,6 @@ export default function createNewItem(e) {
     const newProject = createProject(title, description, date, priority);
     modal.style.display = "none";
     generateProjects(newProject);
+    addNew(newProject);
     return newProject;
 }

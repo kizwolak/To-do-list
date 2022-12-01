@@ -10,7 +10,10 @@ const addNew = document.querySelector("#addNew");
 modal();
 
 const testProject = createProject("test", "desc", new Date(1997,5,28), "chuuuj");
+console.log(testProject);
+
 generateProjects(testProject);
+console.log(testProject);
 
 const submitButton = document.querySelector("#newFormSubmit");
 submitButton.addEventListener('click', formProcessor);
