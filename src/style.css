@@ -40,7 +40,7 @@ body {
     grid-area: main;
 }
 
-.addNewModal {
+#addNewModal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -51,7 +51,7 @@ body {
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-#toDoNewModal {
+#addNewToDoModal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -75,6 +75,11 @@ body {
 }
 
 .addNewForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.addNewToDoForm {
   display: flex;
   flex-direction: column;
 }

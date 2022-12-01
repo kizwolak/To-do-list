@@ -1,5 +1,5 @@
 export default function modal() {
-    const modal = document.querySelector(".addNewModal");
+    const modal = document.querySelector("#addNewModal");
     const addNew = document.querySelector("#addNew");
     const span = document.querySelector(".close");
 
