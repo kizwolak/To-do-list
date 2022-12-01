@@ -17,7 +17,12 @@ export default function generateProjects(project) {
     deleteButton.textContent = "Delete";
 
     let editButton = document.createElement('button');
-    editButton.textContent = "Edit";
+    editButton.textContent = "Edit title";
+    editButton.addEventListener('click', (e) => {
+        const newTitle = prompt("What do you want the title to be brudda?");
+        project.title = newTitle;
+        projectTitle.textContent = newTitle;
+    });
 
     projectButtons.classList = "projectButtons";
     
