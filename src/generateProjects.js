@@ -14,7 +14,8 @@ export default function generateProjects(project) {
 
     let newButton = document.createElement('button');
     newButton.textContent = "New item";
-    newButton.classList = "toDoNew"
+    newButton.classList = "toDoNew";
+    newButton.addEventListener('click', toDoModal);
 
     let deleteButton = document.createElement('button');
     deleteButton.textContent = "Delete";
