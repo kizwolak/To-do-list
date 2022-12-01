@@ -15,3 +15,4 @@ generateProjects(testProject);
 const submitButton = document.querySelector("#newFormSubmit");
 submitButton.addEventListener('click', formProcessor);
 
+// Things to do - connect createProject to generateProjects, create toDoItem generation, finish CSS
