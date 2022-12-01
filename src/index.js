@@ -10,6 +10,7 @@ const addNew = document.querySelector("#addNew");
 modal();
 
 const testProject = createProject("test", "desc", new Date(1997,5,28), "chuuuj");
+testProject.addNew();
 console.log(testProject);
 
 generateProjects(testProject);

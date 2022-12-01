@@ -2,7 +2,7 @@ import addNew from "./addNew";
 import createProject from "./createProject";
 import generateProjects from "./generateProjects";
 
-export default function createNewItem(e) {
+export default function createNewProject(e) {
     const modal = document.querySelector("#addNewModal");
     e.preventDefault();
     const title = document.querySelector("#title").value;
@@ -14,6 +14,5 @@ export default function createNewItem(e) {
     const newProject = createProject(title, description, date, priority);
     modal.style.display = "none";
     generateProjects(newProject);
-    addNew(newProject);
     return newProject;
 }

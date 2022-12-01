@@ -15,10 +15,16 @@ export default function generateProjects(project) {
 
     let deleteButton = document.createElement('button');
     deleteButton.textContent = "Delete";
+    deleteButton.addEventListener('click', (e) => {
+        const parent = e.target.parentNode;
+        parent.parentNode.remove();
+        project = undefined;
+        console.log(project);
+    });
 
     let editButton = document.createElement('button');
     editButton.textContent = "Edit title";
-    editButton.addEventListener('click', (e) => {
+    editButton.addEventListener('click', () => {
         const newTitle = prompt("What do you want the title to be brudda?");
         project.title = newTitle;
         projectTitle.textContent = newTitle;
