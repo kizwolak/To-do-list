@@ -1,3 +1,5 @@
+import toDoModal from "./toDoModal";
+
 export default function generateProjects(project) {
     let projectsDiv = document.querySelector(".projects");
     let projectContainer = document.createElement('div');
@@ -12,6 +14,7 @@ export default function generateProjects(project) {
 
     let newButton = document.createElement('button');
     newButton.textContent = "New item";
+    newButton.classList = "toDoNew"
 
     let deleteButton = document.createElement('button');
     deleteButton.textContent = "Delete";
@@ -37,5 +40,5 @@ export default function generateProjects(project) {
     projectButtons.appendChild(editButton);
     projectContainer.appendChild(projectButtons);
 
-
+    toDoModal();
 }
