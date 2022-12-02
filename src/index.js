@@ -27,3 +27,4 @@ main.appendChild(checkButton);
 checkButton.addEventListener('click', () => (console.log(testProject.arrayOfToDos)));
 
 // Things to do -  create toDoItem generation, finish CSS
+// Convert the date inputted to a format which JS may understand (array methods?)
