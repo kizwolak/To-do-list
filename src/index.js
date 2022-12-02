@@ -4,6 +4,7 @@ import './style.css';
 import generateProjects from "./generateProjects.js";
 import modal from "./modal.js";
 import formProcessor from "./formProcessor.js";
+import toDoModal from "./toDoModal";
 
 
 modal();
@@ -22,5 +23,5 @@ checkButton.textContent = "press here to check if everything works";
 main.appendChild(checkButton);
 checkButton.addEventListener('click', () => (console.log(testProject.arrayOfToDos)));
 
-// Things to do -  create toDoItem generation, finish CSS
+// Things to do - finish CSS
 // Convert the date inputted to a format which JS may understand (array methods?)
