@@ -1,9 +1,11 @@
 import toDoModal from "./toDoModal";
+import addNew from "./addNew.js";
 
 export default function generateProjects(project) {
     let projectsDiv = document.querySelector(".projects");
     let projectContainer = document.createElement('div');
     let projectTitle = document.createElement('h2');
+    const projectArray = project.arrayOfToDos
     
     projectTitle.textContent = project.title;
     projectContainer.appendChild(projectTitle);
@@ -15,9 +17,15 @@ export default function generateProjects(project) {
     let newButton = document.createElement('button');
     newButton.textContent = "New item";
     newButton.classList = "toDoNew";
+
+    function pushNewToDo(e) {
+        e.preventDefault();
+        const newItem = addNew();
+        projectArray.push(newItem);
+    } 
     
     const toDoSubmitButton = document.querySelector('.newToDoSubmit');
-    toDoSubmitButton.addEventListener('click', project.toDoFormProcessor);
+    toDoSubmitButton.addEventListener('click', pushNewToDo);
 
     let deleteButton = document.createElement('button');
     deleteButton.textContent = "Delete";
