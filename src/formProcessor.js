@@ -13,6 +13,6 @@ export default function createNewProject(e) {
     // console.log(title + " " + description + " " + date + " " + priority);
     const newProject = createProject(title);
     modal.style.display = "none";
-    generateProjects(newProject);
-    return newProject;
+    console.log(newProject);
+    return generateProjects(newProject);
 }
