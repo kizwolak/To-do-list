@@ -1,14 +1,14 @@
-export default function toDoObject(title, type, date, priority) {
-    if (type === "desc") {
-        return {
-            title,
-            date,
-            desc,
-            priority,
-        };
-    } else {
-        return {
-            title,
-        }
+export default function toDoObject(title, desc, date, priority) {
+
+    const main = document.querySelector(".main");
+    const titleDOM = document.createElement("p");
+    titleDOM.innerHTML = title;
+    main.appendChild(titleDOM);
+
+    return {
+    title,
+    date,
+    desc,
+    priority,
     }
 };

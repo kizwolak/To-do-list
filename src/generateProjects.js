@@ -15,7 +15,9 @@ export default function generateProjects(project) {
     let newButton = document.createElement('button');
     newButton.textContent = "New item";
     newButton.classList = "toDoNew";
-    newButton.addEventListener('click', toDoModal);
+    
+    const toDoSubmitButton = document.querySelector('.newToDoSubmit');
+    toDoSubmitButton.addEventListener('click', project.toDoFormProcessor);
 
     let deleteButton = document.createElement('button');
     deleteButton.textContent = "Delete";

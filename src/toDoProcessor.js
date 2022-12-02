@@ -9,7 +9,8 @@ export default function createNewProject(e) {
     const priority = document.querySelector('input[name = "prio"]:checked').value;
 
     // console.log(title + " " + description + " " + date + " " + priority);
-    const newProject = addNew(title);
+    const newProject = addNew();
     modal.style.display = "none";
+    console.log(newProject);
 
 }
