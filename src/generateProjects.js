@@ -8,7 +8,13 @@ export default function generateProjects(project) {
     const projectArray = project.arrayOfToDos;
     const addNewToDoForm = document.querySelector('.addNewToDoForm')
     const testSubmit = document.createElement('button');
+    testSubmit.classList = 'testSubmit';
+    const modal = document.querySelector("#addNewToDoModal");
     testSubmit.textContent = 'Add new task';
+    let title = document.querySelector("#title1").value;
+    let description = document.querySelector("#description1").value;
+    let date = document.querySelector("#date1").value;
+
 
     
     projectTitle.textContent = project.title;
@@ -26,12 +32,13 @@ export default function generateProjects(project) {
         const newItem = addNew();
         projectArray.push(newItem);
         e.target.remove();
+        modal.style.display = "none";
+        addNewToDoForm.reset();
     } 
 
     newButton.addEventListener('click', (e) => {
-        const modal = document.querySelector("#addNewToDoModal");
         const span = document.querySelector(".close");
-    
+        const alreadyAddedSubmit = document.querySelector('.testSubmit');
         modal.style.display = "block";
         window.addEventListener('click', (e) => {
             if (e.target == modal) {
@@ -39,13 +46,13 @@ export default function generateProjects(project) {
             }
         });
         testSubmit.addEventListener('click', pushNewToDo);
-        addNewToDoForm.appendChild(testSubmit);
+        if (addNewToDoForm.contains(alreadyAddedSubmit)) {
+            alreadyAddedSubmit.remove()
+            addNewToDoForm.appendChild(testSubmit);
+        } else {
+            addNewToDoForm.appendChild(testSubmit);
+        }
     });
-
-
-
-    
-
 
     let deleteButton = document.createElement('button');
     deleteButton.textContent = "Delete";
