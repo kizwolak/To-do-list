@@ -21,7 +21,7 @@ export default function generateProjects(project) {
             const modal = document.querySelector("#addNewToDoModal");
             const span = document.querySelector(".close");
         
-            e.target.addEventListener('click', () => modal.style.display = "block");
+            modal.style.display = "block";
             window.addEventListener('click', (e) => {
                 if (e.target == modal) {
                     modal.style.display = "none";

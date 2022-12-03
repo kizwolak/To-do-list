@@ -13,4 +13,9 @@ export default function createNewProject(e) {
     modal.style.display = "none";
     console.log(newProject);
 
+    title = '';
+    description = '';
+    date = '';
+    priority = '';
+
 }

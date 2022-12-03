@@ -4,6 +4,7 @@ export default function toDoObject(title, desc, date, priority) {
     const titleDOM = document.createElement("p");
     titleDOM.innerHTML = title;
     main.appendChild(titleDOM);
+    
 
     return {
     title,
