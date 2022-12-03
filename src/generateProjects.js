@@ -2,10 +2,14 @@ import toDoModal from "./toDoModal";
 import addNew from "./addNew.js";
 
 export default function generateProjects(project) {
-    let projectsDiv = document.querySelector(".projects");
-    let projectContainer = document.createElement('div');
-    let projectTitle = document.createElement('h2');
-    const projectArray = project.arrayOfToDos
+    const projectsDiv = document.querySelector(".projects");
+    const projectContainer = document.createElement('div');
+    const projectTitle = document.createElement('h2');
+    const projectArray = project.arrayOfToDos;
+    const addNewToDoForm = document.querySelector('.addNewToDoForm')
+    const testSubmit = document.createElement('button');
+    testSubmit.textContent = 'Add new task';
+
     
     projectTitle.textContent = project.title;
     projectContainer.appendChild(projectTitle);
@@ -17,27 +21,31 @@ export default function generateProjects(project) {
     let newButton = document.createElement('button');
     newButton.textContent = "New item";
 
-    newButton.addEventListener('click', (e) => {
-            const modal = document.querySelector("#addNewToDoModal");
-            const span = document.querySelector(".close");
-        
-            modal.style.display = "block";
-            window.addEventListener('click', (e) => {
-                if (e.target == modal) {
-                    modal.style.display = "none";
-                }
-            });
-    });
-
-
     function pushNewToDo(e) {
         e.preventDefault();
         const newItem = addNew();
         projectArray.push(newItem);
+        e.target.remove();
     } 
+
+    newButton.addEventListener('click', (e) => {
+        const modal = document.querySelector("#addNewToDoModal");
+        const span = document.querySelector(".close");
     
-    const toDoSubmitButton = document.querySelector('.newToDoSubmit');
-    toDoSubmitButton.addEventListener('click', pushNewToDo);
+        modal.style.display = "block";
+        window.addEventListener('click', (e) => {
+            if (e.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+        testSubmit.addEventListener('click', pushNewToDo);
+        addNewToDoForm.appendChild(testSubmit);
+    });
+
+
+
+    
+
 
     let deleteButton = document.createElement('button');
     deleteButton.textContent = "Delete";
