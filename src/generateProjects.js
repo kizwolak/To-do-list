@@ -68,7 +68,7 @@ export default function generateProjects(project) {
     let editButton = document.createElement('button');
     editButton.textContent = "Edit title";
     editButton.addEventListener('click', () => {
-        const newTitle = prompt("What do you want the title to be brudda?");
+        const newTitle = prompt("What do you want the title to be?");
         project.title = newTitle;
         projectTitle.textContent = newTitle;
     });
@@ -76,8 +76,11 @@ export default function generateProjects(project) {
     projectButtons.classList = "projectButtons";
 
     console.log('This is the result: ', projectArray);
-    
-    projectsDiv.addEventListener('click', (projectArray) => {
+
+    projectsDiv.addEventListener('click', (e) => {
+        if (typeof e.target.tagName == 'BUTTON') {
+            return;
+        }
         for (const child of projectArray) {
             const toDoContainer = document.createElement('div');
             toDoContainer.classList = "toDoContainer";
