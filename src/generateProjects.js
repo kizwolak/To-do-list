@@ -77,7 +77,7 @@ export default function generateProjects(project) {
 
     console.log('This is the result: ', projectArray);
 
-    projectsDiv.addEventListener('click', (e) => {
+    projectContainer.addEventListener('click', (e) => {
         if(e.target.tagName === 'BUTTON') return
         main.innerHTML = '';
 
@@ -107,11 +107,14 @@ export default function generateProjects(project) {
             toDoContainer.appendChild(descDOM);
             toDoContainer.appendChild(dateDOM);
             toDoContainer.appendChild(priorityDOM);
-        }});
+        }
+    });
     
     projectButtons.appendChild(newButton);
     projectButtons.appendChild(deleteButton);
     projectButtons.appendChild(editButton);
     projectContainer.appendChild(projectButtons);
+
+    
 
 }
