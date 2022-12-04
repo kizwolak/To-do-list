@@ -75,6 +75,8 @@ export default function generateProjects(project) {
 
     projectButtons.classList = "projectButtons";
 
+    console.log('This is the result: ', projectArray);
+    
     projectsDiv.addEventListener('click', (projectArray) => {
         for (const child of projectArray) {
             const toDoContainer = document.createElement('div');
