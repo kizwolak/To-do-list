@@ -6,6 +6,7 @@ export default function generateProjects(project) {
     const projectContainer = document.createElement('div');
     const projectTitle = document.createElement('h2');
     const projectArray = project.arrayOfToDos;
+    console.log(typeof project.arrayOfToDos);
     const addNewToDoForm = document.querySelector('.addNewToDoForm')
     const testSubmit = document.createElement('button');
     testSubmit.classList = 'testSubmit';
@@ -14,6 +15,7 @@ export default function generateProjects(project) {
     let title = document.querySelector("#title1").value;
     let description = document.querySelector("#description1").value;
     let date = document.querySelector("#date1").value;
+    const main = document.querySelector('.main');
 
 
     
@@ -72,6 +74,25 @@ export default function generateProjects(project) {
     });
 
     projectButtons.classList = "projectButtons";
+
+    projectsDiv.addEventListener('click', (projectArray) => {
+        for (const child of projectArray) {
+            const toDoContainer = document.createElement('div');
+            toDoContainer.classList = "toDoContainer";
+            const titleDOM = document.createElement('h2');
+            titleDOM.innerHTML = child.title;
+            const descDOM = document.createElement('h4');
+            descDOM.innerHTML = child.desc;
+            const dateDOM = document.createElement('h4');
+            dateDOM.innerHTML = child.date;
+            const priorityDOM = document.createElement('h4');
+            priorityDOM.innerHTML = child.priority;
+            main.appendChild(toDoContainer);
+            toDoContainer.appendChild(titleDOM);
+            toDoContainer.appendChild(descDOM);
+            toDoContainer.appendChild(dateDOM);
+            toDoContainer.appendChild(priorityDOM);
+        }});
     
     projectButtons.appendChild(newButton);
     projectButtons.appendChild(deleteButton);
