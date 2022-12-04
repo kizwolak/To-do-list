@@ -78,14 +78,23 @@ export default function generateProjects(project) {
     console.log('This is the result: ', projectArray);
 
     projectsDiv.addEventListener('click', (e) => {
-        if (typeof e.target.tagName == 'BUTTON') {
-            return;
-        }
-        for (const child of projectArray) {
+        if(e.target.tagName === 'BUTTON') return
+
+        exit_loops: for (const child of projectArray) {
+            const allToDoContainer = document.querySelectorAll('.toDoContainer');
+            console.log(allToDoContainer);
             const toDoContainer = document.createElement('div');
             toDoContainer.classList = "toDoContainer";
             const titleDOM = document.createElement('h2');
             titleDOM.innerHTML = child.title;
+            console.log(toDoContainer.contains(titleDOM));
+            for (let i = 0; i < allToDoContainer.length; i++) {
+                console.log(allToDoContainer[i]);
+                let iterTitle = allToDoContainer[i].querySelector('h2');
+                if (iterTitle.innerHTML == child.title) {
+                    continue exit_loops;
+                }
+            }
             const descDOM = document.createElement('h4');
             descDOM.innerHTML = child.desc;
             const dateDOM = document.createElement('h4');
