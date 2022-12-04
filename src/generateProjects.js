@@ -79,6 +79,7 @@ export default function generateProjects(project) {
 
     projectsDiv.addEventListener('click', (e) => {
         if(e.target.tagName === 'BUTTON') return
+        main.innerHTML = '';
 
         exit_loops: for (const child of projectArray) {
             const allToDoContainer = document.querySelectorAll('.toDoContainer');
