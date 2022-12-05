@@ -29,6 +29,7 @@ export default function generateProjects(project) {
     let date = document.querySelector("#date1").value;
     const main = document.querySelector('.main');
     
+    localStorage.setItem(`${project.title}`, JSON.stringify(project));
 
     projectTitle.textContent = project.title;
     projectContainer.appendChild(projectTitle);
@@ -66,7 +67,7 @@ export default function generateProjects(project) {
         if (compareAsc(new Date(today), new Date(newItem.date)) == 1) {
             toDoContainer.style.backgroundColor = 'red';
         };
-    } 
+    };
 
     newButton.addEventListener('click', (e) => {
         const span = document.querySelector(".close");
@@ -144,6 +145,5 @@ export default function generateProjects(project) {
     projectButtons.appendChild(deleteButton);
     projectButtons.appendChild(editButton);
     projectContainer.appendChild(projectButtons);
-
 
 }
