@@ -13,7 +13,7 @@ console.log(today);
 console.log(typeof today);
 
 
-export default function generateProjects(project) {
+export default function generateProjects(project, array) {
     const projectsDiv = document.querySelector(".projects");
     const projectContainer = document.createElement('div');
     const projectTitle = document.createElement('h2');
@@ -67,6 +67,12 @@ export default function generateProjects(project) {
         if (compareAsc(new Date(today), new Date(newItem.date)) == 1) {
             toDoContainer.style.backgroundColor = 'red';
         };
+        let object = localStorage.getItem(`${project.title}`);
+        let parsedObject = JSON.parse(object);
+        parsedObject.arrayOfToDos.push(newItem);
+        localStorage.setItem(`${project.title}`, JSON.stringify(parsedObject));
+
+
     };
 
     newButton.addEventListener('click', (e) => {

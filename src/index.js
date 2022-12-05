@@ -12,7 +12,7 @@ modal();
 
 const testProject = createProject("test");
 
-generateProjects(testProject);
+generateProjects(testProject, testProject.arrayOfToDos);
 
 const submitButton = document.querySelector("#newFormSubmit");
 submitButton.addEventListener('click', formProcessor);
