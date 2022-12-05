@@ -30,7 +30,10 @@ checkButton.addEventListener('click', () => {(console.log(testProject.arrayOfToD
 
 for (let i = 0; i < localStorage.length; i++) {
     const testDiv = document.createElement('div');
-    testDiv.innerHTML = localStorage.getItem(localStorage.key(i))
+    testDiv.innerHTML = localStorage.getItem((localStorage.key(i)));
+    const testDivI = localStorage.getItem((localStorage.key(i)));
+    const testJSON = JSON.parse(testDivI);
+    console.log(testJSON);
     projectsDiv.appendChild(testDiv);
 };
 

@@ -43,7 +43,7 @@ export default function generateProjects(project) {
 
     function pushNewToDo(e) {
         e.preventDefault();
-        const newItem = addNew();
+        const newItem = addNew(project);
         projectArray.push(newItem);
         e.target.remove();
         modal.style.display = "none";

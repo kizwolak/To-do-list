@@ -1,7 +1,7 @@
 import toDoObject from "./toDoObject.js";
 
 
-export default function addNew() {
+export default function addNew(project) {
     const title = document.querySelector("#title1").value;
     const description = document.querySelector("#description1").value;
     const date = document.querySelector("#date1").value;
