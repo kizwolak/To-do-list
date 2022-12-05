@@ -36,6 +36,21 @@ export default function generateProjects(project) {
         e.target.remove();
         modal.style.display = "none";
         addNewToDoForm.reset();
+        const toDoContainer = document.createElement('div');
+        toDoContainer.classList = "toDoContainer";
+        const titleDOM = document.createElement('h2');
+        titleDOM.innerHTML = newItem.title;
+        const descDOM = document.createElement('h4');
+        descDOM.innerHTML = newItem.desc;
+        const dateDOM = document.createElement('h4');
+        dateDOM.innerHTML = newItem.date;
+        const priorityDOM = document.createElement('h4');
+        priorityDOM.innerHTML = newItem.priority;
+        main.appendChild(toDoContainer);
+        toDoContainer.appendChild(titleDOM);
+        toDoContainer.appendChild(descDOM);
+        toDoContainer.appendChild(dateDOM);
+        toDoContainer.appendChild(priorityDOM)
     } 
 
     newButton.addEventListener('click', (e) => {
@@ -106,7 +121,7 @@ export default function generateProjects(project) {
             toDoContainer.appendChild(titleDOM);
             toDoContainer.appendChild(descDOM);
             toDoContainer.appendChild(dateDOM);
-            toDoContainer.appendChild(priorityDOM);
+            toDoContainer.appendChild(priorityDOM)
         }
     });
     
