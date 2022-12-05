@@ -1,5 +1,17 @@
 import toDoModal from "./toDoModal";
 import addNew from "./addNew.js";
+import compareAsc from 'date-fns/compareAsc';
+import parseISO from 'date-fns/parseISO';
+import format from 'date-fns/format';
+import { parse } from "date-fns";
+
+
+
+const today = new Date();
+
+console.log(today);
+console.log(typeof today);
+
 
 export default function generateProjects(project) {
     const projectsDiv = document.querySelector(".projects");
@@ -16,9 +28,8 @@ export default function generateProjects(project) {
     let description = document.querySelector("#description1").value;
     let date = document.querySelector("#date1").value;
     const main = document.querySelector('.main');
-
-
     
+
     projectTitle.textContent = project.title;
     projectContainer.appendChild(projectTitle);
     projectsDiv.appendChild(projectContainer);
@@ -51,6 +62,10 @@ export default function generateProjects(project) {
         toDoContainer.appendChild(descDOM);
         toDoContainer.appendChild(dateDOM);
         toDoContainer.appendChild(priorityDOM);
+        console.log(compareAsc(new Date(today), new Date(newItem.date)));
+        if (compareAsc(new Date(today), new Date(newItem.date)) == 1) {
+            toDoContainer.style.backgroundColor = 'red';
+        };
     } 
 
     newButton.addEventListener('click', (e) => {
@@ -130,6 +145,5 @@ export default function generateProjects(project) {
     projectButtons.appendChild(editButton);
     projectContainer.appendChild(projectButtons);
 
-    
 
 }
