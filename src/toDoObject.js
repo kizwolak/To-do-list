@@ -1,8 +1,9 @@
 export default function toDoObject(title, desc, date, priority) {
+    date = new Date(date);
     return {
     title,
-    date,
     desc,
+    date,
     priority,
     }
 };

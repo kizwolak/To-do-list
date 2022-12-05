@@ -50,7 +50,7 @@ export default function generateProjects(project) {
         toDoContainer.appendChild(titleDOM);
         toDoContainer.appendChild(descDOM);
         toDoContainer.appendChild(dateDOM);
-        toDoContainer.appendChild(priorityDOM)
+        toDoContainer.appendChild(priorityDOM);
     } 
 
     newButton.addEventListener('click', (e) => {
