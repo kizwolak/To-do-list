@@ -29,7 +29,7 @@ export default function generateProjects(project, array) {
     let date = document.querySelector("#date1").value;
     const main = document.querySelector('.main');
     
-    localStorage.setItem(`${project.title}`, JSON.stringify(project));
+    let mainLocalStorage = localStorage.getItem(`${project.title}`, JSON.stringify(project));
 
     projectTitle.textContent = project.title;
     projectContainer.appendChild(projectTitle);
@@ -70,7 +70,7 @@ export default function generateProjects(project, array) {
         let object = localStorage.getItem(`${project.title}`);
         let parsedObject = JSON.parse(object);
         parsedObject.arrayOfToDos.push(newItem);
-        localStorage.setItem(`${project.title}`, JSON.stringify(parsedObject));
+        return mainLocalStorage = localStorage.setItem(`${project.title}`, JSON.stringify(parsedObject));
 
 
     };
