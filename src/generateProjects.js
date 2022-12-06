@@ -29,10 +29,6 @@ export default function generateProjects(project, array) {
     const main = document.querySelector('.main');
     let mainLocalStorage;
 
-    if (localStorage.getItem(`${project.title}`) == null) {
-
-    }
-
 
 
     mainLocalStorage = localStorage.getItem(`${project.title}`, JSON.stringify(project));
@@ -103,6 +99,7 @@ export default function generateProjects(project, array) {
     deleteButton.addEventListener('click', (e) => {
         const parent = e.target.parentNode;
         parent.parentNode.remove();
+        localStorage.removeItem(`${project.title}`);
         project = undefined;
         console.log(project);
     });
