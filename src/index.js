@@ -30,5 +30,4 @@ for (let i = 0; i < localStorage.length; i++) {
     generateProjects(testJSON, testJSONArray);
 };
 
-// Things to do - finish CSS
-// Convert the date inputted to a format which JS may understand (array methods?)
+// Bug - adding new item to other object when another is displayed also displays that object

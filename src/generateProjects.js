@@ -4,7 +4,8 @@ import compareAsc from 'date-fns/compareAsc';
 import parseISO from 'date-fns/parseISO';
 import format from 'date-fns/format';
 import { parse } from "date-fns";
-
+import createNewProject from "./formProcessor.js";
+import createProject from "./createProject.js";
 
 
 const today = new Date();
@@ -110,13 +111,19 @@ export default function generateProjects(project, array) {
     editButton.textContent = "Edit title";
     editButton.addEventListener('click', () => {    
         const newTitle = prompt("What do you want the title to be?");
-        project.title = newTitle;
-        projectTitle.textContent = newTitle;
-        let object = localStorage.getItem(`${project.title}`);
-        let parsedObject = JSON.parse(object);
-        parsedObject.title = newTitle;
-        return localStorage.setItem(`${project.title}`, JSON.stringify(parsedObject));
-
+        localStorage.removeItem(`${project.title}`);
+        // const description = document.querySelector("#description").value;
+        // const date = document.querySelector("#date").value;
+        // const priority = document.querySelector('input[name = "prio"]:checked').value;
+    
+        // console.log(title + " " + description + " " + date + " " + priority);
+        projectContainer.remove();
+        const newProject = createProject(newTitle);
+        modal.style.display = "none";
+        console.log(newProject);
+        const newProjectArray = newProject.arrayOfToDos;
+        localStorage.setItem(`${newProject.title}`, JSON.stringify(newProject));
+        return generateProjects(newProject, newProjectArray);    
     });
 
     projectButtons.classList = "projectButtons";
