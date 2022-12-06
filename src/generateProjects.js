@@ -9,8 +9,7 @@ import { parse } from "date-fns";
 
 const today = new Date();
 
-console.log(today);
-console.log(typeof today);
+
 
 
 export default function generateProjects(project, array) {
@@ -69,7 +68,6 @@ export default function generateProjects(project, array) {
         toDoContainer.appendChild(descDOM);
         toDoContainer.appendChild(dateDOM);
         toDoContainer.appendChild(priorityDOM);
-        console.log(compareAsc(new Date(today), new Date(newItem.date)));
         if (compareAsc(new Date(today), new Date(newItem.date)) == 1) {
             toDoContainer.style.backgroundColor = 'red';
         };
@@ -110,13 +108,12 @@ export default function generateProjects(project, array) {
 
     let editButton = document.createElement('button');
     editButton.textContent = "Edit title";
-    editButton.addEventListener('click', () => {
+    editButton.addEventListener('click', () => {    
         const newTitle = prompt("What do you want the title to be?");
         project.title = newTitle;
         projectTitle.textContent = newTitle;
         let object = localStorage.getItem(`${project.title}`);
         let parsedObject = JSON.parse(object);
-        console.log(object);
         parsedObject.title = newTitle;
         return localStorage.setItem(`${project.title}`, JSON.stringify(parsedObject));
 
@@ -124,22 +121,17 @@ export default function generateProjects(project, array) {
 
     projectButtons.classList = "projectButtons";
 
-    console.log('This is the result: ', projectArray);
-
     projectContainer.addEventListener('click', (e) => {
         if(e.target.tagName === 'BUTTON') return
         main.innerHTML = '';
 
         exit_loops: for (const child of projectArray) {
             const allToDoContainer = document.querySelectorAll('.toDoContainer');
-            console.log(allToDoContainer);
             const toDoContainer = document.createElement('div');
             toDoContainer.classList = "toDoContainer";
             const titleDOM = document.createElement('h2');
             titleDOM.innerHTML = child.title;
-            console.log(toDoContainer.contains(titleDOM));
             for (let i = 0; i < allToDoContainer.length; i++) {
-                console.log(allToDoContainer[i]);
                 let iterTitle = allToDoContainer[i].querySelector('h2');
                 if (iterTitle.innerHTML == child.title) {
                     continue exit_loops;

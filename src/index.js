@@ -25,8 +25,6 @@ for (let i = 0; i < localStorage.length; i++) {
     const testDiv = document.createElement('div');
     const testDivI = localStorage.getItem((localStorage.key(i)));
     const testJSON = JSON.parse(testDivI);
-    console.log(testJSON);
-    console.log(testJSON.arrayOfToDos);
     const testJSONArray = testJSON.arrayOfToDos;
     projectsDiv.appendChild(testDiv);
     generateProjects(testJSON, testJSONArray);

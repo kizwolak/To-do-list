@@ -14,5 +14,7 @@ export default function createNewProject(e) {
     const newProject = createProject(title);
     modal.style.display = "none";
     console.log(newProject);
-    return generateProjects(newProject);
+    const newProjectArray = newProject.arrayOfToDos;
+    localStorage.setItem(`${title}`, JSON.stringify(newProject));
+    return generateProjects(newProject, newProjectArray);
 }
