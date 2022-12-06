@@ -33,6 +33,8 @@ export default function generateProjects(project, array) {
 
     }
 
+
+
     mainLocalStorage = localStorage.getItem(`${project.title}`, JSON.stringify(project));
 
     projectTitle.textContent = project.title;
@@ -112,6 +114,12 @@ export default function generateProjects(project, array) {
         const newTitle = prompt("What do you want the title to be?");
         project.title = newTitle;
         projectTitle.textContent = newTitle;
+        let object = localStorage.getItem(`${project.title}`);
+        let parsedObject = JSON.parse(object);
+        console.log(object);
+        parsedObject.title = newTitle;
+        return localStorage.setItem(`${project.title}`, JSON.stringify(parsedObject));
+
     });
 
     projectButtons.classList = "projectButtons";
@@ -147,7 +155,10 @@ export default function generateProjects(project, array) {
             toDoContainer.appendChild(titleDOM);
             toDoContainer.appendChild(descDOM);
             toDoContainer.appendChild(dateDOM);
-            toDoContainer.appendChild(priorityDOM)
+            toDoContainer.appendChild(priorityDOM);
+            if (compareAsc(new Date(today), new Date(child.date)) == 1) {
+                toDoContainer.style.backgroundColor = 'red';
+            };
         }
     });
     

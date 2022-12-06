@@ -10,9 +10,6 @@ const generalProjectArray = [];
 
 modal();
 
-const testProject = createProject("test");
-
-generateProjects(testProject, testProject.arrayOfToDos);
 
 const submitButton = document.querySelector("#newFormSubmit");
 submitButton.addEventListener('click', formProcessor);
@@ -26,7 +23,6 @@ const checkButton = document.createElement('button');
 
 for (let i = 0; i < localStorage.length; i++) {
     const testDiv = document.createElement('div');
-    testDiv.innerHTML = localStorage.getItem((localStorage.key(i)));
     const testDivI = localStorage.getItem((localStorage.key(i)));
     const testJSON = JSON.parse(testDivI);
     console.log(testJSON);
