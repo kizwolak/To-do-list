@@ -21,11 +21,7 @@ submitButton.addEventListener('click', formProcessor);
 const main = document.querySelector(".main");
 const projectsDiv = document.querySelector('.projects');
 const checkButton = document.createElement('button');
-checkButton.textContent = "press here to check if everything works";
-main.appendChild(checkButton);
-checkButton.addEventListener('click', () => {(console.log(testProject.arrayOfToDos))
-    console.log(typeof testProject.arrayOfToDos);
-});
+
 
 
 for (let i = 0; i < localStorage.length; i++) {
@@ -34,7 +30,10 @@ for (let i = 0; i < localStorage.length; i++) {
     const testDivI = localStorage.getItem((localStorage.key(i)));
     const testJSON = JSON.parse(testDivI);
     console.log(testJSON);
+    console.log(testJSON.arrayOfToDos);
+    const testJSONArray = testJSON.arrayOfToDos;
     projectsDiv.appendChild(testDiv);
+    generateProjects(testJSON, testJSONArray);
 };
 
 // Things to do - finish CSS

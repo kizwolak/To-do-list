@@ -17,8 +17,7 @@ export default function generateProjects(project, array) {
     const projectsDiv = document.querySelector(".projects");
     const projectContainer = document.createElement('div');
     const projectTitle = document.createElement('h2');
-    const projectArray = project.arrayOfToDos;
-    console.log(typeof project.arrayOfToDos);
+    const projectArray = array;
     const addNewToDoForm = document.querySelector('.addNewToDoForm')
     const testSubmit = document.createElement('button');
     testSubmit.classList = 'testSubmit';
@@ -28,8 +27,13 @@ export default function generateProjects(project, array) {
     let description = document.querySelector("#description1").value;
     let date = document.querySelector("#date1").value;
     const main = document.querySelector('.main');
-    
-    let mainLocalStorage = localStorage.getItem(`${project.title}`, JSON.stringify(project));
+    let mainLocalStorage;
+
+    if (localStorage.getItem(`${project.title}`) == null) {
+
+    }
+
+    mainLocalStorage = localStorage.getItem(`${project.title}`, JSON.stringify(project));
 
     projectTitle.textContent = project.title;
     projectContainer.appendChild(projectTitle);
