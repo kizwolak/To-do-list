@@ -60,17 +60,20 @@ export default function generateProjects(project, array) {
         dateDOM.innerHTML = newItem.date;
         const priorityDOM = document.createElement('h4');
         priorityDOM.innerHTML = newItem.priority;
-        main.appendChild(toDoContainer);
-        toDoContainer.appendChild(titleDOM);
-        toDoContainer.appendChild(descDOM);
-        toDoContainer.appendChild(dateDOM);
-        toDoContainer.appendChild(priorityDOM);
         if (compareAsc(new Date(today), new Date(newItem.date)) == 1) {
             toDoContainer.style.backgroundColor = 'red';
         };
         let object = localStorage.getItem(`${project.title}`);
         let parsedObject = JSON.parse(object);
         parsedObject.arrayOfToDos.push(newItem);
+        if (!(main.innerHTML == null)) {
+            return;
+        }
+        main.appendChild(toDoContainer);
+        toDoContainer.appendChild(titleDOM);
+        toDoContainer.appendChild(descDOM);
+        toDoContainer.appendChild(dateDOM);
+        toDoContainer.appendChild(priorityDOM);
         return mainLocalStorage = localStorage.setItem(`${project.title}`, JSON.stringify(parsedObject));
 
 
