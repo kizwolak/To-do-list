@@ -1,43 +1,57 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 4em 10em;
-    display: grid;
-    grid-template-areas: "projects main main main main main main"
-                         "projects main main main main main main"
-                         "projects main main main main main main"
-                         "projects main main main main main main";
+  margin: 4em 10em;
+  display: grid;
+  grid-template-areas: "projects main main main main main main"
+                        "projects main main main main main main"
+                        "projects main main main main main main"
+                        "projects main main main main main main";
+  background-color: rgb(210, 156, 253);
 }
 
 .projects {
-    grid-area: projects;
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
+  grid-area: projects;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin-right: 5em;
 }
 
 .projectsTitle {
-    display: flex;
-    gap: 2em;
-    align-items: center;
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
 }
 
 .projectButtons {
-    display: flex;
-    gap: 2em;
+  display: flex;
+  gap: 2em;
 }
 
 .projects > * > *  {
-    display: flex;
-    gap: 2em;
+  display: flex;
+  gap: 2em;
 }
 
 .main {
-    grid-area: main;
+  grid-area: main;
+  margin-left: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+}
+
+.main > * {
+  padding: 2em;
+  border-radius: 2em;
 }
 
 #addNewModal {
@@ -108,4 +122,39 @@ body {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.projectContainer {
+  border: black 4px solid;
+  padding: 1em;
+  border-radius: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.projectContainer:hover {
+  background-color: burlywood;
+}
+
+.projectContainer:active {
+  background-color: skyblue;
+}
+
+button {
+  font-family: 'Roboto', sans-serif;
+  padding: 0.5em;
+  border-radius: 1.5em;
+  border: black 2px solid;
+}
+
+button:hover {
+  background-color: rgb(197, 197, 197);
+}
+
+.toDoContainer {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
 }

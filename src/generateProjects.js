@@ -16,6 +16,7 @@ const today = new Date();
 export default function generateProjects(project, array) {
     const projectsDiv = document.querySelector(".projects");
     const projectContainer = document.createElement('div');
+    projectContainer.classList = "projectContainer";
     const projectTitle = document.createElement('h2');
     const projectArray = array;
     const addNewToDoForm = document.querySelector('.addNewToDoForm')
@@ -53,13 +54,13 @@ export default function generateProjects(project, array) {
         const toDoContainer = document.createElement('div');
         toDoContainer.classList = "toDoContainer";
         const titleDOM = document.createElement('h2');
-        titleDOM.innerHTML = newItem.title;
+        titleDOM.innerHTML = `Title: ${newItem.title}`;
         const descDOM = document.createElement('h4');
-        descDOM.innerHTML = newItem.desc;
+        descDOM.innerHTML = `Description: ${newItem.desc}`;
         const dateDOM = document.createElement('h4');
-        dateDOM.innerHTML = newItem.date;
+        dateDOM.innerHTML = `Date: ${newItem.date}`;
         const priorityDOM = document.createElement('h4');
-        priorityDOM.innerHTML = newItem.priority;
+        priorityDOM.innerHTML = `Priority: ${newItem.priority}`;
         if (compareAsc(new Date(today), new Date(newItem.date)) == 1) {
             toDoContainer.style.backgroundColor = 'red';
         };
@@ -137,19 +138,19 @@ export default function generateProjects(project, array) {
             const toDoContainer = document.createElement('div');
             toDoContainer.classList = "toDoContainer";
             const titleDOM = document.createElement('h2');
-            titleDOM.innerHTML = child.title;
+            titleDOM.innerHTML = `Title: ${child.title}`;
             for (let i = 0; i < allToDoContainer.length; i++) {
                 let iterTitle = allToDoContainer[i].querySelector('h2');
-                if (iterTitle.innerHTML == child.title) {
+                if (iterTitle.innerHTML == `Title: ${child.title}`) {
                     continue exit_loops;
                 }
             }
             const descDOM = document.createElement('h4');
-            descDOM.innerHTML = child.desc;
+            descDOM.innerHTML = `Description: ${child.desc}`;
             const dateDOM = document.createElement('h4');
-            dateDOM.innerHTML = child.date;
+            dateDOM.innerHTML = `Date: ${child.date}`;
             const priorityDOM = document.createElement('h4');
-            priorityDOM.innerHTML = child.priority;
+            priorityDOM.innerHTML = `Priority: ${child.priority}`;
             main.appendChild(toDoContainer);
             toDoContainer.appendChild(titleDOM);
             toDoContainer.appendChild(descDOM);
@@ -157,6 +158,7 @@ export default function generateProjects(project, array) {
             toDoContainer.appendChild(priorityDOM);
             if (compareAsc(new Date(today), new Date(child.date)) == 1) {
                 toDoContainer.style.backgroundColor = 'red';
+                dateDOM.innerHTML = `PAST DATE: ${child.date}`;
             };
         }
     });
