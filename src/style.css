@@ -11,7 +11,10 @@ body {
                         "projects main main main main main main"
                         "projects main main main main main main"
                         "projects main main main main main main";
-  background-color: rgb(210, 156, 253);
+  background-image: url('./images/office.png');
+  background-position: center;
+  background-size: cover;
+  color: white;
 }
 
 .projects {
@@ -23,15 +26,24 @@ body {
 }
 
 .projectsTitle {
+  font-size: 2rem;
   display: flex;
   gap: 2em;
   align-items: center;
   font-family: "Roboto", sans-serif;
 }
 
+.projectsTitle button {
+  font-size: 1.5rem;
+}
+
 .projectButtons {
   display: flex;
   gap: 2em;
+}
+
+.projectButtons button {
+  font-size: 1.3rem;
 }
 
 .projects > * > *  {
@@ -78,6 +90,7 @@ body {
   
 /* Modal Content/Box */
 .modal-content {
+  border-radius: 1rem;
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
@@ -94,8 +107,16 @@ body {
 }
 
 .addNewToDoForm {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  color: black;
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+}
+
+.addNewToDoForm > input {
+  font-size: 1.5rem;
 }
 
 /* The Close Button */
@@ -125,20 +146,13 @@ body {
 }
 
 .projectContainer {
-  border: black 4px solid;
+  font-size: 1.5rem;
+  border: white 4px solid;
   padding: 1em;
   border-radius: 2em;
   display: flex;
   flex-direction: column;
   gap: 1em;
-}
-
-.projectContainer:hover {
-  background-color: burlywood;
-}
-
-.projectContainer:active {
-  background-color: skyblue;
 }
 
 button {
