@@ -17,6 +17,10 @@ body {
   color: white;
 }
 
+input {
+  padding: 0.3rem;
+}
+
 .projects {
   grid-area: projects;
   display: flex;
@@ -102,8 +106,18 @@ body {
 }
 
 .addNewForm {
+  color: black;
+  font-size: 2rem;
   display: flex;
   flex-direction: column;
+}
+
+.addNewForm > input {
+  font-size: 1.5rem;
+}
+
+.addNewForm button {
+  font-size: 1.4rem;
 }
 
 .addNewToDoForm {
@@ -167,6 +181,8 @@ button:hover {
 }
 
 .toDoContainer {
+  color: antiquewhite;
+  background-color: transparent;
   font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
