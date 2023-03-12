@@ -101,12 +101,16 @@ body {
   justify-content: center;
 }
 
-.addNewForm {
-  display: flex;
-  flex-direction: column;
+.addNewForm > button {
+  font-size: 1.5rem;
 }
 
-.addNewToDoForm {
+.addNewForm > input {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.addNewForm, .addNewToDoForm {
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
   color: black;
@@ -116,6 +120,7 @@ body {
 }
 
 .addNewToDoForm > input {
+  padding: 0.5rem;
   font-size: 1.5rem;
 }
 
@@ -167,6 +172,7 @@ button:hover {
 }
 
 .toDoContainer {
+  background-color: rgba(0,0,0,0.4);
   font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
